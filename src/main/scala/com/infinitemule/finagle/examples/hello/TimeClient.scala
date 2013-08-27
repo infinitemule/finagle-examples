@@ -60,19 +60,30 @@ class TimeClient(port: Int) {
 
   private val req = RequestBuilder().url("http://localhost:" + port).buildGet    
   
+  /**
+   * Makes a request to the server and handles the response. 
+   */
   def requestTime() = {
        
     client(req)
-      .onSuccess { response => 
-        println("Time: " + response.getContent().toString(UTF_8)) 
+      .onSuccess { resp => 
+        println("Time: " + readTime(resp)) 
       }
       .onFailure { ex =>       
         println("Error requesting time: " + ex.getMessage())
       }
       
   }
-      
   
+      
+  /**
+   * The response body is in the form of a ChannelBuffer
+   * but we can easily convert it to a String
+   */
+  def readTime(resp: HttpResponse): String = 
+    resp.getContent().toString(UTF_8)
+  
+    
   def close() = client.close()
   
 }
