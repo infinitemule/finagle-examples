@@ -1,0 +1,38 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.infinitemule.finagle</groupId>
+  <artifactId>finagle-examples</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+
+
+  <dependencies>
+    <dependency>
+      <groupId>com.twitter</groupId>
+      <artifactId>finagle-http_2.10</artifactId>
+      <version>6.5.2</version>
+    </dependency>
+  </dependencies>
+  
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>net.alchim31.maven</groupId>
+        <artifactId>scala-maven-plugin</artifactId>
+        <version>3.1.0</version>
+        <configuration>
+          <recompileMode>incremental</recompileMode>
+          <useZincServer>true</useZincServer>
+        </configuration>
+        <executions>
+          <execution>
+            <id>compile</id>
+            <goals>
+              <goal>compile</goal>
+              <goal>testCompile</goal>
+            </goals>
+          </execution>          
+        </executions>
+      </plugin>  
+    </plugins>
+  </build>        
+</project>
