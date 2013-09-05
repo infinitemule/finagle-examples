@@ -4,21 +4,18 @@
 package com.infinitemule.finagle.examples.hello
 
 import com.twitter.finagle.builder.ClientBuilder
-import com.twitter.finagle.http.{
-  Http,
-  RequestBuilder
-}
+import com.twitter.finagle.http.{Http,
+                                 RequestBuilder}
 import com.twitter.finagle.Service
 import com.twitter.util.Future
 import org.jboss.netty.buffer.ChannelBuffers.copiedBuffer
-import org.jboss.netty.handler.codec.http.{
-  HttpRequest, 
-  HttpResponse
-}
-import org.jboss.netty.handler.codec.http.{
-  DefaultHttpRequest,
-  HttpVersion  
-}
+
+import org.jboss.netty.handler.codec.http.{HttpRequest, 
+                                           HttpResponse}
+
+import org.jboss.netty.handler.codec.http.{DefaultHttpRequest,
+                                           HttpVersion}  
+
 import org.jboss.netty.util.CharsetUtil.UTF_8
 
 import java.net.InetSocketAddress
