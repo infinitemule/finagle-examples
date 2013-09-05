@@ -12,11 +12,9 @@ import com.twitter.util.Future
 
 import org.jboss.netty.buffer.ChannelBuffers.copiedBuffer
 import org.jboss.netty.handler.codec.http.{
-  HttpRequest, 
-  HttpResponse
-}
-import org.jboss.netty.handler.codec.http.{
   DefaultHttpResponse,
+  HttpRequest, 
+  HttpResponse,
   HttpResponseStatus,
   HttpVersion  
 }
